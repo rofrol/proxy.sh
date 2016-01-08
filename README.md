@@ -2,6 +2,12 @@
 
 Shell script to set proxy for various programs.
 
+## Usage
+
+```bash
+sh proxy.sh <proxy> <exception>
+```
+
 ## Copmarision to setting env variables HTTP_PROXY and HTTPS_PROXY
 
 ### Benefits

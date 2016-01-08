@@ -2,27 +2,18 @@
 
 proxy="${1}"
 exception="${2}"
+gitconfig_proxy="~/.gitconfig_proxy"
+gitconfig_proxy_r="${gitconfig_proxy/#\~/$HOME}"
 
 #################################################################################
 # git
 #################################################################################
 
-cat <<EOT > ~/.gitconfig_proxy
-# bower is using git, though you can use ~/.bowerrc
-# not needed anymore? https://github.com/bower/bower/pull/732
-[url "https://"]
-	insteadOf = git://
-[http]
-	proxy = ${1}
-[https]
-	proxy = ${1}
-[http "${2}"]
-	proxy = 
-[https "${2}"]
-	proxy = 
-EOT
-
-git config --global include.path "~/.gitconfig_proxy"
+git config -f ${gitconfig_proxy_r} http.proxy ${proxy}
+git config -f ${gitconfig_proxy_r} https.proxy ${proxy}
+git config -f ${gitconfig_proxy_r} http."${exception}".proxy ''
+git config -f ${gitconfig_proxy_r} https."${exception}".proxy ''
+git config --global include.path "${gitconfig_proxy}"
 
 # check with: git config --global -l
 
