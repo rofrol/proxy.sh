@@ -21,3 +21,4 @@ Shell script to set proxy for various programs.
 - [ ] Evaulate alternatives
   - [ ] http://cntlm.sourceforge.net/
   - [ ] [Microsoft Firewall Client for ISA Server](https://www.microsoft.com/en-us/download/details.aspx?id=10193)
+- [ ] Add unproxy.sh
