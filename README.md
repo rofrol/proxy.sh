@@ -14,7 +14,7 @@ sh proxy.sh <proxy> <exception>
 
 - Single script run and everything works
 - You don't need to restart all the programs to reread env variables, when you unhibernate your machine and there is no proxy in the network
-- If you need to clone some repo whihc is accessible not through proxy, you don't need to unreset proxy like this `git clone --config "http.proxy="` and then reset proxy inside repo
+- If you need to clone some repo which is accessible not through proxy, you don't need to unreset proxy like this `git clone --config "http.proxy="` and then reset proxy inside repo
 
 ### Drawbacks
 
