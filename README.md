@@ -13,12 +13,11 @@ Shell script to set proxy for various programs.
 ### Drawbacks
 
 - You may need to set proxy for new programs
-- Clobbering your `~/.gitconfig`
 
 ## TODO
 
 
-- [ ] use `git config include.path` to unclobber `~/.gitconfig`
+- [x] Use `git config include.path` to unclobber `~/.gitconfig`
 - [ ] Evaulate alternatives
   - [ ] http://cntlm.sourceforge.net/
   - [ ] [Microsoft Firewall Client for ISA Server](https://www.microsoft.com/en-us/download/details.aspx?id=10193)

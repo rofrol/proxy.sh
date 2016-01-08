@@ -7,21 +7,24 @@ exception="${2}"
 # git
 #################################################################################
 
-git config --global http.proxy ${proxy}
-git config --global https.proxy ${proxy}
-git config --global http."${exception}".proxy ''
-git config --global https."${exception}".proxy ''
-# check with: git config --global -l
-
-#################################################################################
-# bower
-#################################################################################
-
+cat <<EOT >> ~/.gitconfig_proxy
 # bower is using git, though you can use ~/.bowerrc
-
 # not needed anymore https://github.com/bower/bower/pull/732
-git config --global url."https://".insteadOf git://
+[url "https://"]
+	insteadOf = git://
+[http]
+	proxy = ${1}
+[https]
+	proxy = ${1}
+[http "${2}"]
+	proxy = 
+[https "${2}"]
+	proxy = 
+EOT
 
+git config --global include.path "~/.gitconfig_proxy"
+
+# check with: git config --global -l
 
 #################################################################################
 # npm
