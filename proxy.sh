@@ -9,7 +9,7 @@ exception="${2}"
 
 cat <<EOT >> ~/.gitconfig_proxy
 # bower is using git, though you can use ~/.bowerrc
-# not needed anymore https://github.com/bower/bower/pull/732
+# not needed anymore? https://github.com/bower/bower/pull/732
 [url "https://"]
 	insteadOf = git://
 [http]
