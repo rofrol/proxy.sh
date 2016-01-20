@@ -13,6 +13,7 @@ git config -f ${gitconfig_proxy_r} http.proxy ${proxy}
 git config -f ${gitconfig_proxy_r} https.proxy ${proxy}
 git config -f ${gitconfig_proxy_r} http."${exception}".proxy ''
 git config -f ${gitconfig_proxy_r} https."${exception}".proxy ''
+git config -f ${gitconfig_proxy_r} url."https://".insteadOf git://
 git config --global include.path "${gitconfig_proxy}"
 # check with: git config --global -l
 
