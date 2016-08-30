@@ -53,5 +53,34 @@ apm config set https-proxy ${HTTP_PROXY}
 # gem
 #################################################################################
 
-echo "http_proxy: ${HTTP_PROXY}" > ~/.gemrc
+echo "http_proxy: ${HTTP_PROXY}" >> ~/.gemrc
 # check with: gem environment
+
+#################################################################################
+# elinks
+#################################################################################
+
+# works with env http_proxy and https_proxy
+# set without protocol
+
+echo "set protocol.http.proxy.host = <proxy_host>:<proxy_port>" >> ~/.elinks/elinks.conf
+echo "set protocol.https.proxy.host = <proxy_host>:<proxy_port>" >> ~/.elinks/elinks.conf
+
+#################################################################################
+# curl
+#################################################################################
+
+# works with env http_proxy and https_proxy
+# set without protocol
+
+# http://stackoverflow.com/questions/9445489/linux-curl-command-with-proxy
+# http://stackoverflow.com/questions/7559103/how-to-setup-curl-to-permanently-use-a-proxy
+
+echo "proxy = <proxy_host>:<proxy_port>" >> ~/.curlrc
+
+#################################################################################
+# VirtualBox
+#################################################################################
+
+# This isn't a VirtualBox (or Windows XP) problem
+# http://superuser.com/questions/78157/configure-virtualbox-to-connect-to-internet-through-proxy/655899#655899
